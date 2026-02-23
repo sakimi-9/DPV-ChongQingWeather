@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "metric": "pjqw",
+      "max_year": 2022,
+      "max_value": 19.7,
+      "min_year": 2012,
+      "min_value": 17.992
+    },
+    {
+      "metric": "jsl",
+      "max_year": 2023,
+      "max_value": 1554.5,
+      "min_year": 2001,
+      "min_value": 856.8
+    },
+    {
+      "metric": "rzss",
+      "max_year": 2022,
+      "max_value": 1428.3,
+      "min_year": 2014,
+      "min_value": 830.8
+    },
+    {
+      "metric": "pjxdsd",
+      "max_year": 2014,
+      "max_value": 87.0,
+      "min_year": 2022,
+      "min_value": 75.0
+    }
+  ]
+}

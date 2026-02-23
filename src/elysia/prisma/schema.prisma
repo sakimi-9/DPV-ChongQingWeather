@@ -1,0 +1,37 @@
+// DPV-CQW Prisma 数据模型
+// 说明：针对 src/python/data_processed 下的图表 JSON 建立统一存储模型
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ProcessedChartDataset {
+  id         Int      @id @default(autoincrement())
+  datasetKey String   @unique @db.VarChar(128)
+  sourceFile String   @db.VarChar(255)
+  payload    Json
+  payloadType String  @db.VarChar(16)
+  itemCount  Int      @default(0)
+  importedAt DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("processed_chart_dataset")
+}
+
+model ProcessedChartImportLog {
+  id          Int      @id @default(autoincrement())
+  runId       String   @db.VarChar(64)
+  importedAt  DateTime @default(now())
+  fileCount   Int      @default(0)
+  successCount Int     @default(0)
+  failedCount Int      @default(0)
+  details     Json
+
+  @@index([runId])
+  @@map("processed_chart_import_log")
+}
